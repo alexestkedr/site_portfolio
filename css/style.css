@@ -1,0 +1,18 @@
+
+body{
+	font-family: '';
+	font-size: 1rem;
+	line-height: 1.2;	
+}
+
+html{ box-sizing:border-box;
+}
+
+/* все элементы наследуют значение свойства у родительского элемента*/
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+
+ul, ol{
+	list-style-type:none;
+}
