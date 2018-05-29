@@ -46,6 +46,45 @@ ul, ol{
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
-	height: 100vh;
+	height: 100vh; /*100vh - это 100% от окна, которого мы просматриваем сайт (от Браузера)*/
+	
+	color: white;/* цвет шрифта у текста белый*/
+	text-align:center;/*отцентрировали текст по горизонтале*/
+
+	display: flex;  /*нужен, чтобы в дальнейшем задать свойства для выровнивания всех div по вертикале*/
+	flex-direction: column;
+	align-items: center; /*выравнивание по вертикале*/
+	justify-content: center; /*выравнивание по горизонтали*/
+
+	position: relative;/*задали,тк стрелку позиционировали absolute*/
+}
+
+.header__title{
+	font-family: 'Merriweather Sans', sans-serif;
+	font-size:3rem;
+	line-height: 1.7;
+	margin-top: -60px;/*приподняли блок наверх*/
+	margin-bottom: 20px;
 
 }
+
+.header__slogan{
+	font-size:1.5rem;
+	line-height: 1.4;
+
+}
+
+.header__arrow{
+	font-size: 48px;
+	width: 60px;
+	height: 50px;
+	margin-left: -30px;/*половина от width*/
+
+
+	position: absolute;/*нужно,чтобы опустить стрелку вниз по центру блока-родителя header*/
+	bottom: 50px;/*нужно,чтобы опустить стрелку вниз блока-родителя header*/
+	left:50%;/*нужно,чтоб отцентрить. те слева отошли половину окна браузера и нарисовали стрелку*/
+	
+}
+
+				/* PORTFOLIO START */
