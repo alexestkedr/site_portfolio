@@ -21,11 +21,17 @@
 	font-style: normal;
 }
 
-html{ 
+html, body{ 
 	font-family: 'PT Sans Caption', sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 	box-sizing:border-box;
+}
+
+/*по умолчанию картинка имеет отступы, нужно задать ей
+display:block/inline-block; */
+img{
+	display: inline-block;
 }
 
 /* все элементы наследуют значение свойства у родительского элемента*/
@@ -38,51 +44,60 @@ ul, ol{
 
 }
 
-/*...............................................
-
-	GRID
-
-................................................*/
 .container{
 	max-width: 1140px;
 	margin:auto;
 
 }
 
-.row{
-
-}
-
 
 .col{
-	max-width: 360px;/* ширина колонки в Photoshop */
-	margin-right: 30px;/* отступ справа м/у колонками в Photoshop */
-	
-/* вариант №1 - "используем float": 
-шаг 1: выровним колонки в ряд с помощью float:left; */
-	
-	float:left;
+	max-width: 360px;  /* ширина колонки в Photoshop */
+	margin-right: 30px;  /* отступ справа м/у колонками в Photoshop */
 }
 
-/* шаг 2: тк мы задали отступ справа 30px для всех колонок,то
+			/* СДЕЛАЕМ КОЛОНКИ В РЯД */
+
+/*
+
+			вариант №1 - "используем float"
+
+шаг 1: выровним колонки в ряд с помощью float:left; 
+	
+.col {
+	float:left;
+
+}
+
+шаг 2: тк мы задали отступ справа 30px для всех колонок,то
 	по ширине последняя колонка не помещается. Уберем у ней
-	отступ справа с помощью .col:last-child */
+	отступ справа с помощью .col:last-child 
+
 .col:last-child{
 	margin-right:0px;
 
 }
 
-/* шаг 3: сделаем сброс от float указав родителю след-ие свойства*/
+ шаг 3: сделаем сброс от float указав родителю след-ие свойства
 .row:after{
 	content:"";
 	clear: both;
 	display: table;
+}
+
+*/
+
+		/* вариант №2 - "используем FLEX" */
+
+.row{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 }
 
 
-
-				/* HEADER START */
+			/* HEADER START */
 
 
 /* фоновая картинка и необходимые свойства к ней */
@@ -109,14 +124,14 @@ ul, ol{
 	font-family: 'Merriweather Sans', sans-serif;
 	font-size:3rem;
 	line-height: 1.7;
-	margin-top: -60px;/*приподняли блок наверх*/
+	margin-top: -90px;/*приподняли блок наверх*/
 	margin-bottom: 20px;
 
 }
 
 .header__slogan{
 	font-size:1.5rem;
-	line-height: 1.4;
+	line-height: 1.5;
 
 }
 
@@ -139,9 +154,53 @@ ul, ol{
 из этих длоков имеет одинаковую ширину - 
 мы напишем один универсальный класс для всех шести блоков */
 
+.portfolio{
+	padding-top:70px; 
+	padding-bottom: 100px;
+}
 
+.portfolio__title{
+	font-family: 'Merriweather Sans', sans-serif;
+	font-size: 2.5rem;
+	text-align: center;
+	margin-bottom: 60px;
 
 }
 
+/*добавили класс portfolio__item  на случай если в дальнейшем 
+захотит добавить еще несколько рядов с работами и 
+м/у ними были отступы*/
+.portfolio__item{
+margin-bottom: 20px;
+}
 
 
+.portfolio__item-img{
+	margin-bottom: 17px;
+}
+
+.portfolio__item-title{
+	font-size:1.3rem;
+	line-height: normal;
+	margin-bottom:5px;
+
+}
+/*выберем ссылку и зададим для нее свойства*/
+.portfolio__item-title a{
+	text-decoration: none;
+	color:black;
+	border-bottom:1px solid white;
+
+}
+/*опишем поведение ссылки по наведенению на неё мыши*/
+.portfolio__item-title a:hover{
+	color:#0052c2;
+	border-color: rgba(0, 82, 194, 0.3);/*0.3 - это насыщщеность = 30%*/
+}
+
+/*выберем абзац и зададим для него свойства*/
+.portfolio__item-text p{
+	margin-bottom: 15px;
+	margin-top: 0;/*уберем отступ, тк по умолчанию нормалайз делает оступы*/
+
+}
