@@ -93,6 +93,7 @@ ul, ol{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	/*flex-wrap: wrap;*/
 
 }
 
@@ -204,3 +205,6 @@ margin-bottom: 20px;
 	margin-top: 0;/*уберем отступ, тк по умолчанию нормалайз делает оступы*/
 
 }
+
+
+				/* FOOTER START */
