@@ -1,38 +1,21 @@
-
-/* 
-1) делаем самовызывающую анонимную функцию function(){}; 
-2) нужно добавить обработчик события клика по кнопке который будет открывать форму.
-   Но перед тем как делать это, нужно убедится что вообще существует ли
-   такой класс (заданный в css) чтобы верно выбрать его и затем повесить обработчик события
-      a) var openFormButton = document.querySelector('.arrow-down'); - выбираем нужный класс на который будем вешать обработчик
-      б) if (openFormButton) {} - если наша кнопка существует, то.. делай обработчик
-      в) openFormButton.addEventListener('click', function() {
-			form.open() }; - эта запись в 2 строчки и есть сам ОБРАБОТЧИК СОБЫТИЯ
-
-3) e.preventDefault(); - отменяем действие по умолчанию
-благодяря этому нажимая на стрелку (сделали ее ссылкой) форма открывается в этом же окне корректно
-т.е. действие по умолчанию у ссылки это переход на элемент либо на страничку
-что указана в атрибуте href="", а мы это отменили.
-*/
-  
-
-
-( function() {
-
-	var openFormButton = document.querySelector('.arrow-down');
-
-
-	if (openFormButton) {
-
-		openFormButton.addEventListener('click', function(e) {
-
-			e.preventDefault();
-
-
-			form.open();
-
-		  })
-
-		}
+function timer()
+{
+	// Находим элемент h1 в документе
+	span = document.getElementsByTagName('span')[0];
 	
-}() );
+	// Устанавливаем дату
+	var date = new Date();
+	
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	var seconds = date.getSeconds();
+	
+	if (hours < 10) hours = "0" + hours;// Для удобства отображения
+	if (minutes < 10) minutes = "0" + minutes;
+	if (seconds < 10) seconds = "0" + seconds;
+	
+	span.innerHTML = hours + ":" + minutes + ":" + seconds;
+	
+	// Вызываем функцию раз в одну секунду
+	setTimeout('timer()', 1000);
+}

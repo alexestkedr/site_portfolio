@@ -302,3 +302,10 @@ p.footer__social-icons a:hover{
 
 }
 
+.time{
+	text-align: center;
+	display: block;
+	color:#061634;
+	font-size: 2rem;
+	font-weight: 600;
+}
