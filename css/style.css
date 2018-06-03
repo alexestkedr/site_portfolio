@@ -69,7 +69,7 @@ ul, ol{
 
 }
 
-шаг 2: тк мы задали отступ справа 30px для всех колонок,то
+шаг 2: тк мы задали отступ справа 30px для всех трёх колонок,то
 	по ширине последняя колонка не помещается. Уберем у ней
 	отступ справа с помощью .col:last-child 
 
@@ -172,7 +172,7 @@ ul, ol{
 захотит добавить еще несколько рядов с работами и 
 м/у ними были отступы*/
 .portfolio__item{
-margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 
@@ -208,3 +208,97 @@ margin-bottom: 20px;
 
 
 				/* FOOTER START */
+
+#footer{
+	background-color: #061634;
+	color:#6479a2;
+	padding-top: 90px;
+	padding-bottom: 190px;
+	
+}
+
+.footer__container{
+	max-width: 1140px;
+	margin:auto;
+}
+
+
+.footer__row{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/*flex-wrap: wrap;*/
+}
+
+.footer__col{
+	max-width: 360px;  /* ширина колонки в Photoshop */
+	margin-right: 30px;  /* отступ справа м/у колонками в Photoshop */
+}
+
+.footer__col:last-child{
+	margin-right:0px;
+}
+
+
+#footer p{
+	margin-top:0px;/*уберем отступы сверху у абзацев от normalize*/
+	margin-bottom: 15px;
+
+}
+
+p.footer__name{ /*выберем тег P, у которого есть класс footer__name*/
+	font-family: 'Merriweather Sans', sans-serif;
+	font-size: 1.6rem;
+	margin-bottom:10px;
+	line-height: normal;	
+}
+
+p.footer__social{
+	color: white;
+	
+}
+
+p.footer__social-icons{
+	color: white;
+	font-size:32px;
+}
+
+p.footer__social-icons a{
+	color: white;
+	text-decoration: none;
+	margin-right:30px;/* расстояние м/у ссылками-иконками*/
+}
+
+/* у последней ссылки-иконки уберем margin-right:30px*/
+p.footer__social-icons a:last-child{
+	margin-right:0px;
+}
+
+p.footer__social-icons a:hover{
+	color:#ffe400;
+}
+
+.footer__button{
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+	display:inline-block;
+	text-transform: uppercase;
+	letter-spacing: 1.6px;
+
+	border-width: 2px;
+	border-color: white; 
+	border-style: solid;
+	border-radius: 50px;
+
+	padding: 8px 23px;
+	margin-bottom:13px;
+	
+}
+
+.footer__button:hover{
+	color:#061634;
+	background-color: white;
+
+}
+
