@@ -192,6 +192,8 @@ ul, ol{
 	color:black;
 	border-bottom:1px solid white;
 
+	transition: 0.3s ease-out;
+
 }
 /*опишем поведение ссылки по наведенению на неё мыши*/
 .portfolio__item-title a:hover{
@@ -205,6 +207,50 @@ ul, ol{
 	margin-top: 0;/*уберем отступ, тк по умолчанию нормалайз делает оступы*/
 
 }
+
+
+		 /* PORTFOLIO SINGLE PAGE START */
+
+.portfolio__single-page{
+	padding-top: 50px;
+	padding-bottom:50px;
+	text-align:center;
+}
+
+.portfolio__single-page img{
+	margin-bottom: 50px;
+	max-width: 100%;/*чтобы картинка не выходила за границы своего container 
+	и не появилось горизонт. прокручивания */
+	height:auto;
+	/*display:block;*/ /*чтобы кнопка и картинка не находилась на одной линии
+	а перешла на след. строчку*/
+}
+			
+.button-back{
+	font-weight: bold;
+	text-decoration: none;
+	color:#0052c2;
+	display:inline-block;
+	text-transform: uppercase;
+	letter-spacing: 1.6px;
+
+	border-width: 2px;
+	border-color:#0052c2;
+	border-style: solid;
+	border-radius: 50px;
+	margin-bottom:13px;
+
+	padding: 8px 23px;
+	
+	transition: 0.3s ease-out;
+	
+}
+
+.button-back:hover{
+	color:white;
+	background-color:#0052c2;
+}
+
 
 
 				/* FOOTER START */
@@ -267,11 +313,14 @@ p.footer__social-icons a{
 	color: white;
 	text-decoration: none;
 	margin-right:30px;/* расстояние м/у ссылками-иконками*/
+
+	transition: 0.3s ease-out;
 }
 
 /* у последней ссылки-иконки уберем margin-right:30px*/
 p.footer__social-icons a:last-child{
 	margin-right:0px;
+
 }
 
 p.footer__social-icons a:hover{
@@ -293,6 +342,8 @@ p.footer__social-icons a:hover{
 
 	padding: 8px 23px;
 	margin-bottom:13px;
+
+	transition: 0.3s ease-out;
 	
 }
 
@@ -306,13 +357,11 @@ p.footer__social-icons a:hover{
 	text-align: center;
 	display: block;
 	color:white;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	font-weight: 600;
 	position: absolute;
-	left:0px;
-	top:0px;
-
-	margin:5px 10px;
+	left:10px;
+	top:5px;
 
 	border-width: 2px;
 	border-color: white; 

@@ -19,3 +19,13 @@ function timer()
 	// Вызываем функцию раз в одну секунду
 	setTimeout('timer()', 1000);
 }
+
+					// ЗАДАЧА 1	
+/*					
+var admin, name;// две переменных через запятую
+name = 'Vasilij';
+admin = name;
+console.log(admin);
+*/
+
+
