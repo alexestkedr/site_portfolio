@@ -34,9 +34,16 @@ img{
 	display: inline-block;
 }
 
-/* все элементы наследуют значение свойства у родительского элемента*/
+/* все элементы наследуют значение свойства у родительского элемента
+
 *, *:before, *:after{
 	box-sizing: inherit;
+}
+
+*/
+
+*{
+	box-sizing: border-box;
 }
 
 ul, ol{
@@ -108,6 +115,7 @@ ul, ol{
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
+	
 	height: 100vh; /*100vh - это 100% от окна, которого мы просматриваем сайт (от Браузера)*/
 	
 	color: white;/* цвет шрифта у текста белый*/
@@ -178,6 +186,20 @@ ul, ol{
 
 .portfolio__item-img{
 	margin-bottom: 17px;
+}
+
+/*выберем все изображения внутри данного контейнера с классом .
+portfolio__item-img*/
+
+.portfolio__item-img img{ 
+	max-width: 100%;/*макс.ширина изображения может быть 
+равна 100% ширины контейнеры в котором она лежит. 
+Если ширина контейнера будет меньше ширины картинки, то картинка
+должна будет подстоиться по ширине*/
+	
+	height: auto;/*высота картинки будет пропорц-но 
+масштабироваться относительно ширины*/
+
 }
 
 .portfolio__item-title{
@@ -375,5 +397,72 @@ p.footer__social-icons a:hover{
 .time:hover{
 	color:#061634;
 	background-color: white;
+
+}
+
+
+				/* MEDIA QUERIES */
+
+/* 1-ый @media: При ШИРИНЕ экрана в 1160px и менее.
+(больше - нельзя, меньше - подходит)
+
+width container у нас 1140px, но мы взяли запас 
+чтобы по бокам было по 10px
+*/
+
+@media (max-width: 1160px) {
+
+	.container, .footer__container{
+		width: 100%;
+}
+
+
+	.col, .footer__col {
+		width:100%;	/*сделали колонки (работы) по одной в ряд одна под другой*/
+		margin:0;
+		margin-bottom:30px; /*чтобы картинки плотно не прилегали друг к другу*/
+		padding-left: 15px; /*чтобы картинки и текст плотно не прилегали к краям экрана слева и справа*/
+		padding-right: 15px;/*чтобы картинки и текст плотно не прилегали к крвям экрана слева и справа*/
+		text-align: center;/*центрируем текст и картинки внутри колонок*/
+ 		box-sizing:border-box;/*убрать прокрутку горизонтальную, т.к.
+ 		width + paddidng > 100%*/
+ 	}
+
+	.row, .footer__row{
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.time{
+		display: none;
+	}
+
+	.header__title{
+		font-size: 38px;
+		line-height: 48px;
+		margin-bottom: 15px;
+	}
+
+	.header__slogan{
+		font-size: 22px;
+		line-height: 38px;
+	}
+
+	.portfolio{
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
+
+	.portfolio__title{
+		font-size: 36px;
+	}
+
+	
+	#footer{
+		padding-top: 70px;
+		padding-bottom: 60px;
+	}
 
 }
