@@ -32,6 +32,7 @@ html, body{
 display:block/inline-block; */
 img{
 	display: inline-block;
+	/*max-width: 100%; - ширина не превышает родителя */
 }
 
 /* все элементы наследуют значение свойства у родительского элемента
@@ -116,7 +117,8 @@ ul, ol{
 	background-position: center;
 	background-size: cover;
 	
-	height: 100vh; /*100vh - это 100% от окна, которого мы просматриваем сайт (от Браузера)*/
+	height: 100vh; /*100vh - это 100% от окна, которого мы просматриваем сайт (от Браузера)
+	На все занимаемое пространство*/
 	
 	color: white;/* цвет шрифта у текста белый*/
 	text-align:center;/*отцентрировали текст по горизонтале*/
@@ -433,6 +435,11 @@ width container у нас 1140px, но мы взяли запас
 		flex-flow: column wrap;
 		justify-content: center;
 		align-items: center;
+	}
+
+	#header{
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 
 	.time{
